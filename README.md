@@ -62,8 +62,10 @@ The following example shows a docker-compose.yml for imixs-office-workflow:
 	    POSTGRES_PASSWORD: adminadmin
 	    POSTGRES_DB: workflow-db
 	
-	imixs-workflow:
-	  image: imixs/wildfly
+	imixsworkflow:
+	  image: imixs/workflow
+	  environment:
+	    WILDFLY_PASS: adminadmin
 	  ports:
 	    - "8080:8080"
 	    - "9990:9990"

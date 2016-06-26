@@ -2,10 +2,10 @@ postgres:
   image: postgres
   environment:
     POSTGRES_PASSWORD: adminadmin
-    POSTGRES_DB: office
+    POSTGRES_DB: workflow-db
 
-office:
-  image: imixs/office-workflow
+imixsworkflow:
+  image: imixs/workflow
   environment:
     WILDFLY_PASS: adminadmin
   ports:
