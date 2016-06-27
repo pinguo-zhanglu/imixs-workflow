@@ -1,6 +1,6 @@
 # imixs-workflow
 
-The image imixs/workflow provides a container to run Imixs-Workflow as a microservice on the Wildfly application server.
+The image imixs/workflow provides a container to run [Imixs-Workflow](http://www.imixs.org) as a microservice on the Wildfly application server.
 The image provides the following managed volume mount points:
 
 * /opt/wildfly/standalone/configuration/
@@ -12,7 +12,7 @@ The volumes can be externalized on the docker host to provide more flexibility i
 
 ## How to Run
 
-To run Imixs-workflow the container need to be linked to a postgreSQL database container. The database connection is configured in the Wildfly standalone.xml file and can be customized to any other database system. 
+To run Imixs-workflow in a Docker container, the container need to be linked to a postgreSQL database container. The database connection is configured in the Wildfly standalone.xml file and can be customized to any other database system. 
 
 ### Starting a Postgress Container
 To start a postgreSQL container run the following command:
@@ -98,7 +98,7 @@ The imixs/workflow image provides a standalne.xml configuration file for wildfly
     	imixs/imixs-workflow
     	
 # Contribute
-The sources for this docker image are available on [Github](https://github.com/imixs-docker/imixs-workflow). Please report any issues.
+General information about Imixs-Workflow can be found the the [project home](http://www.imixs.org). The sources for this docker image are available on [Github](https://github.com/imixs-docker/imixs-workflow). Please report any issues.
 
 To build the image from the Dockerfile manually checkout the sources and run:
 
