@@ -149,7 +149,7 @@
                     </security>
                 </datasource>
               
-             	<!-- imixs-workflow datasource -->
+             	<!-- imixs-workflow datasource 
                 <datasource jta="true" jndi-name="java:/jdbc/workflow-db" pool-name="workflow-db" enabled="true" use-ccm="true">
                     <connection-url>jdbc:postgresql://postgres/workflow-db</connection-url>
                     <driver-class>org.postgresql.Driver</driver-class>
@@ -167,12 +167,50 @@
                         <share-prepared-statements>false</share-prepared-statements>
                     </statement>
                 </datasource>
+                -->
                 
+                
+                  <!-- postgres XA datasoruce --> 
+                <xa-datasource jndi-name="java:/jdbc/workflow-db" pool-name="workflow-db" enabled="true" use-java-context="true">
+                    <xa-datasource-property name="ServerName">
+                        postgres
+                    </xa-datasource-property>
+                    <xa-datasource-property name="PortNumber">
+                        5432
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                        workflow-db
+                    </xa-datasource-property>
+                    <driver>postgresql</driver>
+                    <xa-pool>
+                        <min-pool-size>5</min-pool-size>
+                        <initial-pool-size>5</initial-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                        <prefill>true</prefill>
+                    </xa-pool>
+                    <security>
+                        <user-name>postgres</user-name>
+                        <password>adminadmin</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+                    </validation>
+                    <statement>
+                        <prepared-statement-cache-size>32</prepared-statement-cache-size>
+                        <share-prepared-statements>true</share-prepared-statements>
+                    </statement>
+                </xa-datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
+                    <driver name="postgresql" module="org.postgresql">
+                        <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+                        <datasource-class>org.postgresql.Driver</datasource-class>
+                    </driver>
                 </drivers>
+              
             </datasources>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">

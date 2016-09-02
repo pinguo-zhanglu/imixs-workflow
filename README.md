@@ -9,6 +9,8 @@ The image provides the following managed volume mount points:
 
 The volumes can be externalized on the docker host to provide more flexibility in runtime configuration.
 
+See the [Imixs-Microservice Project on GitHub](https://github.com/imixs/imixs-microservice) to learn more about how to use the microservice. 
+
 
 ## How to Run
 
@@ -103,3 +105,6 @@ General information about Imixs-Workflow can be found the the [project home](htt
 To build the image from the Dockerfile manually checkout the sources and run:
 
 	docker build --tag=imixs/imixs-workflow .
+
+
+If you have any questions concerning the Imixs-Microservice please see the [Imixs-Microservice Project on GitHub](https://github.com/imixs/imixs-microservice)

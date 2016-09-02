@@ -11,8 +11,7 @@ ADD configuration/standalone.xml /opt/wildfly/standalone/configuration/
 
 
 # add deployments units
-ADD deployments/postgresql-9.3-1102.jdbc41.jar /opt/wildfly/standalone/deployments/
-ADD deployments/imixs-microservice-1.4.0.war /opt/wildfly/standalone/deployments/
+ADD deployments/ /opt/wildfly/standalone/deployments/
 
 
 # create log directory
