@@ -1,13 +1,14 @@
 # imixs-workflow
 
-The image imixs/workflow provides a container to run [Imixs-Workflow](http://www.imixs.org) as a microservice on the Wildfly application server.
-The image provides the following managed volume mount points:
+The image imixs/workflow provides a container to run [Imixs-Workflow](http://www.imixs.org) as a microservice on the Wildfly application server. The image provides the following managed volume mount points:
 
 * /opt/wildfly/standalone/configuration/
 * /opt/wildfly/standalone/deployments/
 * /opt/wildfly/standalone/log/
 
 The volumes can be externalized on the docker host to provide more flexibility in runtime configuration.
+
+[![](https://images.microbadger.com/badges/image/imixs/workflow.svg)](http://microbadger.com/images/imixs/workflow "Get your own image badge on microbadger.com")
 
 See the [Imixs-Microservice Project on GitHub](https://github.com/imixs/imixs-microservice) to learn more about how to use the microservice. 
 
